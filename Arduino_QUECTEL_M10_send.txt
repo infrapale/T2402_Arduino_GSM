@@ -1,0 +1,90 @@
+@ 0ms
+! Reset = 0  
+@ 1000 msec
+> AT<CR> 
+@ 1070ms 
+< AT<CR><CR><LF>OK<CR><LF>
+> AT+CPIN=1234<CR> 
+@ 1095ms
+< AT+CPIN=1234<CR> 
+@ 4387ms
+< <CR><LF>+CPIN: READY<CR<LF><CR><LF>OK<CR><LF>
+
+@ 5286ms
+> AT+CGREG?<CR>
+@ 5300ms
+< AT+CGREG?<CR><CR><LF>+CGREG:<SP>0,2<CR><LF>OK<CR><LF>
+
+! ---------------------------------------------------------
+! Polling
+@ 6210ms
+> AT+CGREG?<CR>
+@ 6226ms
+< AT+CGREG?<CR><CR><LF>+CGREG:<SP>0,2<CR><LF>OK<CR><LF>
+
+@ 7136ms
+> AT+CGREG?<CR>
+@ 7150ms
+<AT+CGREG?<CR><CR><LF>+CGREG:<SP>0,2<CR><LF>OK<CR><LF>
+
+@ 8061ms
+> AT+CGREG?<CR>
+@ 8077ms
+< AT+CGREG?<CR><CR><LF>+CGREG:<SP>0,2<CR><LF>OK<CR><LF>
+
+@ 8061ms
+> AT+CGREG?<CR>
+@ 8077ms
+< AT+CGREG?<CR><CR><LF>+CGREG:<SP>0,1<CR><LF>OK<CR><LF>
+! ---------------------------------------------------------
+
+@ 9035
+> AT+IFC=1,1<CR>
+@ 9050
+< AT+IFC=1,1<CR><CR><LF>OK<CR><LF>
+
+@ 9945
+> AT+CMGF=1<CR>
+@ 9960
+< AT+CMGF=1<CR><CR><LF>OK<CR><LF>
+
+@ 9977
+> AT+CLIP=1<CR>
+@ 9993
+< AT+CLIP=1<CR><CR><LF>OK<CR><LF>
+
+@ 10010ms
+> ATE0<CR>
+@ 10021ms
+> ATE0<CR><CR><LF>OK<CR><LF>
+
+@ 10032ms
+> AT+COLP=1<CR>
+@ 10049ms
+> <CR><LF>OK<CR><LF>
+
+! ---------------------------------------------------------
+! Send SMS ABC123 to 0405056630
+! ---------------------------------------------------------
+
+@ 0 ms
+> AT+CMGS="0405056630"<CR>
+@ 27ms
+< <CR><LF>><SP>
+> ABC123<SUB><CR>
+
+! ---------------------------------------------------------
+! Special Codes
+! ---------------------------------------------------------
+! <CR> = 0x0D
+! <LF> = 0x0A
+! <SP> = 0x20
+! <SUB> = 0x1A
+! <ESC> = 0x1B
+! ---------------------------------------------------------
+
+
+
+<CR><LF>
+
+
